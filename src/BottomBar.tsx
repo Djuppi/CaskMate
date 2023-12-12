@@ -3,22 +3,31 @@ import {Pressable, StyleSheet, Text, View} from 'react-native';
 import HomeScreen from './Screens/HomeScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import Icon from 'react-native-ico-material-design';
+import LinearGradient from 'react-native-linear-gradient';
 
 type Props = {};
 
 const BottomBar = (props: Props) => {
   const [text, changeText] = useState<string>('Hey');
 
-
   return (
     <View style={styles.NavContainer}>
       <Text>{text}</Text>
-      <View style={styles.NavBar}>
+      <LinearGradient
+        colors={['#111', '#112', "#eef", '#eee']} // Array of gradient colors
+        start={{x: 0, y: 0}} // Gradient start point
+        end={{x: 1, y: 0}} // Gradient end point
+        style={styles.NavBar}>
         <Pressable
           onPress={() => changeText('Aske')}
           style={styles.IconBehave}
           android_ripple={{borderless: true, radius: 50}}>
-          <Icon name="favorite-heart-button" height={26} width={26} color="#E38035" />
+          <Icon
+            name="favorite-heart-button"
+            height={26}
+            width={26}
+            color="#E38035"
+          />
         </Pressable>
         <Pressable
           onPress={() => changeText('Hey')}
@@ -32,7 +41,7 @@ const BottomBar = (props: Props) => {
           android_ripple={{borderless: true, radius: 50}}>
           <Icon name="favorite-heart-button" height={26} width={26} />
         </Pressable>
-      </View>
+      </LinearGradient>
     </View>
   );
 };

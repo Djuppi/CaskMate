@@ -13,6 +13,7 @@
     "react": "18.2.0",
     "react-native": "0.73.0",
     "react-native-ico-material-design": "^5.1.2",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-svg": "^14.1.0"
   },
   "devDependencies": {
